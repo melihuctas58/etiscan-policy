@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <title>Etiscan – Hesap ve Veri Silme Talebi</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        body {
+            max-width: 820px;
+            margin: 24px auto;
+            padding: 0 16px;
+            font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #333;
+        }
+        h1, h2, h3 {
+            line-height: 1.3;
+            color: #222;
+        }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Form ve Uyarı Stilleri */
+        .form-container {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 24px;
+            background: #fdfdfd;
+        }
+        .form-group {
+            margin-bottom: 1.5em;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Önemli: padding + width = 100% */
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .helper-text {
+            display: block;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 4px;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #dc3545; /* Silme işlemi için kırmızı */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #c82333;
+        }
+
+        /* Uyarı Kutusu */
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 24px;
+        }
+        .warning-box strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Alternatif Yöntem Kutusu */
+        .alternative-box {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+            border: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hesap ve Veri Silme Talebi</h1>
+    <p>Etiscan hesabınızı ve hesabınızla ilişkili tüm verileri (tarama geçmişi dahil) kalıcı olarak silmek için bu formu kullanabilirsiniz.</p>
+
+    <div class="warning-box">
+        <strong>Dikkat: Bu işlem geri alınamaz.</strong>
+        <p>Hesabınız silindiğinde, tüm tarama geçmişiniz ve ayarlarınız kalıcı olarak yok edilecektir. Lütfen bu işlemden emin olarak devam edin.</p>
+    </div>
+
+    <div class="form-container">
+        <form action="https://formspree.io/f/your-id" method="POST">
+            
+            <div class="form-group">
+                <label for="name">Adınız Soyadınız</label>
+                <input type="text" id="name" name="name" required placeholder="Hesabınızdaki ad soyad">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-posta Adresiniz</label>
+                <input type="email" id="email" name="email" required placeholder="Google ile giriş yaptığınız e-posta">
+                <span class="helper-text">Lütfen hesabınızı doğrulamak için Google'da kayıtlı olan e-posta adresinizi girin.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="uid">Kullanıcı UID (Opsiyonel)</label>
+                <input type="text" id="uid" name="uid" placeholder="Örn: a1b2c3d4...">
+                <span class="helper-text">Uygulama içindeki 'Hesap' ekranında bulabilirsiniz. Bu, talebinizi daha hızlı doğrulamamızı sağlar.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="note">Ek Not (Opsiyonel)</label>
+                <textarea id="note" name="note" rows="4" placeholder="Silme nedeni veya eklemek istediğiniz diğer bilgiler..."></textarea>
+            </div>
+
+            <button type="submit">Hesabımı ve Tüm Verilerimi Kalıcı Olarak Sil</button>
+        </form>
+    </div>
+
+    <div class="alternative-box">
+        <h3>Alternatif Yöntem</h3>
+        <p>Dilerseniz, <a href="mailto:destek@saglikai.app?subject=Hesap%20Silme%20Talebi">destek@saglikai.app</a> adresine doğrudan "Hesap Silme Talebi" başlıklı bir e-posta göndererek de talebinizi iletebilirsiniz. Lütfen talebi, hesabınıza kayıtlı e-posta adresinden gönderdiğinizden emin olun.</p>
+    </div>
+
+</body>
+</html>
